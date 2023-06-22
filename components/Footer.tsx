@@ -22,7 +22,13 @@ function Footer() {
 					))}
 				</div>
 			</div>
-
+			<div className="flex flex-wrap items-center justify-between px-6 py-10 mt-10 border-t border-gray-100 sm:px-16">
+				<p>@2023 CarHub. All Rights Reserved</p>
+				<div className="flex justify-center flex-1 gap-10 sm:justify-end max-sm:mt-4">
+					<Link href="/" className='text-gray-500'>Privacy Policy</Link>
+					<Link href="/" className='text-gray-500'>Terms of Use</Link>
+				</div>
+			</div>
 		</footer>
 	)
 }
