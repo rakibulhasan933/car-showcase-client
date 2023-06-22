@@ -1,4 +1,4 @@
-import { Hero, SearchBar } from "@/components";
+import { CustomFilter, Hero, SearchBar } from "@/components";
 
 
 
@@ -15,7 +15,7 @@ export default function Home() {
           <SearchBar />
         </div>
         <div className="flex flex-wrap items-center justify-start gap-2">
-
+          <CustomFilter />
         </div>
       </div>
     </main>
