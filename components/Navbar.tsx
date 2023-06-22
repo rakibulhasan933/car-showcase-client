@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import CustomButton from './CustomButton'
 
 function Navbar() {
 	return (
@@ -12,6 +13,11 @@ function Navbar() {
 						height={18}
 						className='object-contain ' />
 				</Link>
+				<CustomButton
+					tittle='Sign In '
+					btnType='button'
+					containerStyles="text-primary-blue rounded-full bg-white min-w-[130px]"
+				/>
 			</nav>
 		</header>
 	)
