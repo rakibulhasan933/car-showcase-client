@@ -1,8 +1,9 @@
 "use client"
 import { CustomButtonProps } from '@/types'
+import Image from 'next/image'
 import React from 'react'
 
-const CustomButton = ({ tittle, containerStyles, handleClick, btnType }: CustomButtonProps) => {
+const CustomButton = ({ tittle, containerStyles, handleClick, btnType, textStyles, rightIcon }: CustomButtonProps) => {
 	return (
 		<button
 			disabled={false}
@@ -10,9 +11,12 @@ const CustomButton = ({ tittle, containerStyles, handleClick, btnType }: CustomB
 			className={`flex flex-row relative justify-center items-center py-3 px-6 outline-none ${containerStyles}`}
 			onClick={handleClick}
 		>
-			<span className={`flex-1`}>
+			<span className={`flex-1 ${textStyles}`}>
 				{tittle}
 			</span>
+			{rightIcon && (<div className='relative w-6 h-6 '>
+				<Image src={rightIcon} fill priority alt='icon' className='object-contain ' />
+			</div>)}
 		</button>
 	)
 }
