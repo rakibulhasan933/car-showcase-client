@@ -30,6 +30,28 @@ function CarCard({ car }: CarCardProps) {
 			<div className="relative object-contain w-full h-40 my-3 ">
 				<Image src="/hero.png" alt={car.model} fill priority className='object-contain ' />
 			</div>
+			<div className="relative flex w-full mt-2">
+				<div className="flex justify-between w-full text-gray-100 group-hover:invisible ">
+					<div className="flex flex-col items-center justify-center gap-2 ">
+						<Image src="/steering-wheel.svg" alt="steering" width={20} height={20} />
+						<p className=" text-[14px] text-black">
+							{car.transmission === 'a' ? 'Automatic' : 'Manual'}
+						</p>
+					</div>
+					<div className="flex flex-col items-center justify-center gap-2 ">
+						<Image src="/tire.svg" alt="tire" width={20} height={20} />
+						<p className=" text-[14px] text-black">
+							{car.drive.toLocaleUpperCase()}
+						</p>
+					</div>
+					<div className="flex flex-col items-center justify-center gap-2 ">
+						<Image src="/gas.svg" alt="gas" width={20} height={20} />
+						<p className=" text-[14px] text-black">
+							{car.city_mpg}MPG
+						</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	)
 }
