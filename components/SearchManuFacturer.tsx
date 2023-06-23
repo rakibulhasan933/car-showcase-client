@@ -1,4 +1,5 @@
 "use client"
+import { manufacturers } from '@/constants'
 import { SearchManuFacturerProps } from '@/types'
 import { Combobox } from '@headlessui/react'
 import Image from 'next/image'
@@ -6,6 +7,8 @@ import React, { useState } from 'react'
 
 function SearchManuFacturer({ manufacturer, setManufacturer }: SearchManuFacturerProps) {
 	const [query, setQuery] = useState('');
+
+	const filterManufacturer = query === "" ? manufacturers : manufacturers.filter((item) => item.toLowerCase().replace(/\s+/g, "").includes(query.toLowerCase().replace(/\s+/g, "")));
 	return (
 		<div className="flex items-center justify-start flex-1 max-sm:w-full">
 			<Combobox>
