@@ -58,8 +58,8 @@ function CarCard({ car }: CarCardProps) {
 				<div className="absolute bottom-0 z-10 hidden w-full group-hover:flex">
 					<CustomButton
 						tittle='View More'
-						containerStyles=' w-full py-[16px] rounded-full bg-primary-blue'
-						textStyles=' text-white text-[14px] leading-[17px] font-bold'
+						containerStyles='w-full py-[16px] rounded-full bg-primary-blue'
+						textStyles='text-white text-[14px] leading-[17px] font-bold'
 						rightIcon='/right-arrow.svg'
 						handleClick={() => setIsOpen(true)}
 					/>
