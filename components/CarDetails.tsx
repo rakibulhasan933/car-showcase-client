@@ -38,7 +38,7 @@ function CarDetails({ isOpen, closeModel, car }: CarDetailsProps) {
 								leaveTo='opacity-0 scale-95'
 							>
 								<Dialog.Panel
-									className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto transform rounded-2xl bg-white text-left shadow-xsl transition-all flex flex-col gap-5"
+									className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto transform rounded-2xl bg-white p-6 text-left shadow-xsl transition-all flex flex-col gap-5"
 								>
 									<button
 										type="button"
@@ -60,6 +60,17 @@ function CarDetails({ isOpen, closeModel, car }: CarDetailsProps) {
 											</div>
 											<div className="relative flex w-full h-24 bg-primary-blue-100 rounded-xl">
 												<Image src="/hero.png" alt={car.model} fill priority className='object-contain ' />
+											</div>
+										</div>
+										<div className="flex flex-col flex-1 gap-2">
+											<h2 className="text-xl font-semibold capitalize">{car.make} {car.model}</h2>
+											<div className="flex flex-wrap gap-4 mt-3">
+												{Object.entries(car).map(([key, value]) => (
+													<div className="flex justify-between w-full gap-5 text-right" key={key}>
+														<h4 className="capitalize text-gray">{key.split("_").join(" ")}</h4>
+														<p className="font-semibold text-black-100">{value}</p>
+													</div>
+												))}
 											</div>
 										</div>
 									</div>
