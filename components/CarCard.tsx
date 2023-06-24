@@ -16,7 +16,7 @@ function CarCard({ car }: CarCardProps) {
 	const carRent = calculateCarRent(car.city_mpg, car.year);
 
 	return (
-		<div className='flex flex-col items-start justify-center p-6 text-black-100 bg-primary-blue-100 hover:bg-white hover:shadow-md rounded-3xl cursor-pointer group-[]:'>
+		<div className='flex flex-col items-start justify-center p-6 cursor-pointer text-black-100 bg-primary-blue-100 hover:bg-white hover:shadow-md rounded-3xl group'>
 			<div className="flex items-start justify-between w-full gap-2 ">
 				<h2 className="text-[22px] leading-[26px] font-bold capitalize">
 					{car.make} {car.model}
@@ -55,7 +55,7 @@ function CarCard({ car }: CarCardProps) {
 						</p>
 					</div>
 				</div>
-				<div className="absolute bottom-0 z-10 hidden w-full group-hover:flex">
+				<div className="absolute z-10 hidden w-full group-hover:bottom-0 group-hover:flex">
 					<CustomButton
 						tittle='View More'
 						containerStyles='w-full py-[16px] rounded-full bg-primary-blue'
