@@ -51,6 +51,17 @@ function CarDetails({ isOpen, closeModel, car }: CarDetailsProps) {
 										<div className="relative w-full h-40 bg-center bg-cover rounded-lg bg-pattern">
 											<Image src="/hero.png" alt={car.model} fill priority className='object-contain ' />
 										</div>
+										<div className="flex gap-3">
+											<div className="relative flex w-full h-24 bg-primary-blue-100 rounded-xl">
+												<Image src="/hero.png" alt={car.model} fill priority className='object-contain ' />
+											</div>
+											<div className="relative flex w-full h-24 bg-primary-blue-100 rounded-xl">
+												<Image src="/hero.png" alt={car.model} fill priority className='object-contain ' />
+											</div>
+											<div className="relative flex w-full h-24 bg-primary-blue-100 rounded-xl">
+												<Image src="/hero.png" alt={car.model} fill priority className='object-contain ' />
+											</div>
+										</div>
 									</div>
 								</Dialog.Panel>
 							</Transition.Child>
