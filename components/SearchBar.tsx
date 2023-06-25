@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { SearchManuFacturer } from './'
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
 	<button type="submit" className={`-ml-3 z-10 ${otherClasses}`}>
@@ -11,11 +12,33 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
 
 function SearchBar() {
 	const [model, setModel] = useState('');
-	const handleSearch = () => {
-		console.log("search working");
+	const [manufacturer, setManufacturer] = useState('');
+	const router = useRouter();
+	const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		if (manufacturer === '' && model === '') {
+			return alert("Please fill in the search bar")
+		}
+		updateSearchParams(model.toLowerCase(), manufacturer.toLowerCase())
 	}
 
-	const [manufacturer, setManufacturer] = useState('');
+	const updateSearchParams = (model: string, manufacturer: string) => {
+		const searchParams = new URLSearchParams(window.location.search);
+		if (model) {
+			searchParams.set('model', model);
+		} else {
+			searchParams.delete('model')
+		}
+		if (manufacturer) {
+			searchParams.set('manufacturer', manufacturer);
+		} else {
+			searchParams.delete('manufacturer')
+		}
+		const newPathName = `${window.location.pathname}?${searchParams.toString()}`
+		router.push(newPathName);
+	}
+
+
 	return (
 		<form className='relative flex items-center justify-start w-full max-w-3xl max-sm:flex-col max-sm:gap-4' onSubmit={handleSearch}>
 			<div className="relative flex items-center justify-start flex-1 max-sm:w-full">
