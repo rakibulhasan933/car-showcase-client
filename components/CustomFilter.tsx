@@ -1,6 +1,11 @@
-import React from 'react'
+"use client"
 
-function CustomFilter() {
+import { CustomFilterProps } from "@/types"
+import { useState } from "react"
+
+
+function CustomFilter({ title, options }: CustomFilterProps) {
+	const [selected, setSelected] = useState(options[0])
 	return (
 		<div>CustomFilter</div>
 	)

@@ -1,4 +1,5 @@
 import { CarCard, CustomFilter, Hero, SearchBar } from "@/components";
+import { fuels, yearsOfProduction } from "@/constants";
 import { CarProps } from "@/types";
 import { fetchCars } from "@/utils";
 
@@ -19,7 +20,8 @@ export default async function Home() {
           <SearchBar />
         </div>
         <div className="flex flex-wrap items-center justify-start gap-2">
-          <CustomFilter />
+          <CustomFilter title="fuel" options={fuels} />
+          <CustomFilter title="year" options={yearsOfProduction} />
         </div>
       </div>
       <section>
