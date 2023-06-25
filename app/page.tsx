@@ -16,12 +16,14 @@ export default async function Home() {
           <h1 className="text-4xl font-extrabold">Car Catalogue</h1>
           <p>Explore the cars you might like</p>
         </div>
-        <div className="flex-wrap items-center w-full gap-5 mt-12 flex-between">
-          <SearchBar />
-        </div>
-        <div className="flex flex-wrap items-center justify-start gap-2">
-          <CustomFilter title="fuel" options={fuels} />
-          <CustomFilter title="year" options={yearsOfProduction} />
+        <div className="flex flex-row items-center justify-between px-4">
+          <div className="flex-wrap items-center w-full gap-5 mt-12 flex-between">
+            <SearchBar />
+          </div>
+          <div className="flex flex-row items-center gap-2">
+            <CustomFilter title="fuel" options={fuels} />
+            <CustomFilter title="year" options={yearsOfProduction} />
+          </div>
         </div>
       </div>
       <section>
